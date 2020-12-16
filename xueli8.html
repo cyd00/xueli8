@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding:0;
+			margin:0; 
+		}
+		ul,li{
+			list-style: none;
+		}
+		.box{
+			width:1200px;
+			height:380px;
+			/* border:5px solid red; */
+			margin:20px auto;/*距离banner的值是10px*/
+			position:relative;
+			overflow:hidden;
+		}
+		.slider{
+			width: 8400px;
+			position:absolute;
+			left:-1200px;
+		}
+		.box>span{
+			height:100px;
+			width:60px;
+			display: block;
+			background-color: rgb(255,0,0);
+			font-size:30px;
+			line-height: 100px;
+			text-align: center;
+			position:absolute;
+			opacity:0;
+			color: lightgrey;
+		}
+		.slide{
+			float: left;
+			overflow: hidden;
+			width:1200px;
+		}
+
+		#left{
+			left:30px;
+			top:140px;
+		}
+		#right{
+			right:30px;
+			top:140px;
+		}
+		.nav{
+			position: absolute;
+			left:500px;
+			bottom: 20px;
+		}
+		.nav>li{
+			float: left;
+			width:30px;
+			height:30px;
+			background: #ccc;
+			margin:0 10px;
+			border-radius: 50%;
+			line-height: 30px;
+			text-align: center;
+			cursor: pointer;
+
+		}
+		.nav .active{
+			background: red;
+			color: white;
+		}
+		.banner{
+			height: 30px;
+			width: auto;
+			background-color: #ccc;
+			/*opacity: 0.4;*/
+		}
+		#img1{
+			width: 100px;
+			height: 30px;
+			margin-left: 200px;
+			margin-top: 4px;
+			float:left;
+		}
+		#words{
+			margin-top: 4px;
+			width: 450px;
+			height: 20px;
+			color: white;
+			float: left;
+
+		}
+		#block{
+			width: 800px;
+			float: left;
+			overflow: hidden;
+		}
+
+		.slide>img{
+			width: 1200px;
+			height: 390px;
+		}
+		.img{
+			width: 100px;
+			height: 26px;
+		}
+		
+		.last{
+			background-color:#76767633;
+			padding-bottom: 73px;
+			width: 100%;
+		}
+		.boxx{
+			width: 1200px;
+			height: 60px;
+			margin:0 auto;
+			background-color:rgba(255,255,255,1);
+			border-top: 5px solid #76767633;
+		}
+
+		.nav3{
+			float: left;
+			width: 900px;
+			height: 15px;
+		}
+		.nav3 a{
+			color: black;
+		}
+		.nav3 li{
+			float: left;
+			margin-top: 21px;
+			margin-left: 34px;
+			text-align: center;
+			border-left: 1px solid rgba(191,191,191,1);
+			height: 16px;
+			
+		}
+		.ja{
+			padding-left:15px ;
+		}
+		#sp{
+			padding-left:30px ;
+		}
+		.xiugai{
+			float: right;
+			padding-top: 21px;
+			padding-right: 61px;
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			
+		}
+		.xiugai a{
+			color:#00B4FF ;
+		}
+		.nav3 .jingpin{
+			border: none;
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			font-weight:bold;
+		}
+		.jingpin a{
+			color: #00B4FF ;
+		}
+		
+		.kong{
+			width: 1200px;
+			margin: 0 auto;
+		}
+
+		.oneul li{
+			padding-top: 30px;
+			float: left;
+			font-size:20px;
+			font-family:Microsoft YaHei;
+			
+			color:rgba(73,73,73,1);
+		}
+
+		.twoul li{
+			padding-top: 40px;
+			float: right;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+		}
+		.twoul li a{
+			color:rgba(165,165,165,1);
+		}
+		.mid3{
+			width: 1200px;
+			height: 555px;
+			margin: 0 auto;
+			margin-top: 15px;
+		}
+		.box2 li{
+			width: 228px;
+			height: 270px;
+			position: relative;
+			background-color: white;
+			border-right:15px solid #76767633;
+			float: left;
+			border-bottom: 15px solid #76767633;
+		}
+		.box2 li img{
+			width: 228px;
+		}
+		.xia{
+			height: 115px;
+			position: absolute;
+		}
+		.xia1{
+			width: 185px;
+			height: 32px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+			color:rgba(5,5,5,1);
+			line-height:20px;
+			margin-left: 23px;
+			margin-top: 24px;
+
+		}
+		.xia2{
+			width: 119px;
+			height: 13px;
+			margin-left: 23px;
+			margin-bottom: 26px;
+			margin-top: 20px;
+		}
+		#gaoji{
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			color: #FF7B2DFF;
+		}
+		#xuexi{
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			color: #7676767F;
+		}
+		.box2 #H5{
+			border-right:none ;
+		}
+		.kong2{
+			width: 1200px;
+			height:20px ;
+			margin:0 auto;
+		}
+
+		.qi{
+			float: left;
+			font-size:20px;
+			font-family:Microsoft YaHei;
+			color:rgba(72,72,72,1);
+			margin-top: 15px;
+		}
+		.cha a{
+			float: right;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			color:rgba(165,165,165,1);
+			margin-top: 20px;
+		}
+		.xiaonav{
+			margin:0 auto;
+			padding-top: 30px;
+			width: 337px;
+		}
+		.box4{
+			width: 400px;
+		}
+		.box4 li{
+			float: left;
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			margin-right: 50px;
+			width: 50px;
+		}
+
+		.box4 li a{
+			color:#868686FF;
+			text-decoration:none;
+		}
+
+		.mid5{
+			width: 1200px;
+			height: 270px;
+			margin: 0 auto;
+		}
+		.box5{
+			float: left;
+			margin-top: 21px;
+			margin-bottom: 35px;
+		}
+		.box5 li{
+			height: 270px;
+			float: left;
+			width: 228px;
+			background-color: white;
+			border-right: 15px solid #76767633;
+		}
+		.box5 img{
+			width: 228px;
+		}
+		.xia3{
+			margin-left: 23px;
+			margin-top: 24px;
+			width: 185px;
+			height: 34px;
+			font-size:14px;
+			font-family:Microsoft YaHei;
+
+		}
+	
+		.box5 #UGUI{
+			border-right: none;
+		}
+
+		.box6{
+			width: 1200px;
+			margin: 0 auto;
+			margin-bottom: 33px;
+		}
+		.box6 li{
+			float: left;
+			font-size:20px;
+			font-family:Microsoft YaHei;
+			color:rgba(72,72,72,1);
+		}
+		.mid7{
+			width: 1200px;
+			height: 320px;
+			margin: 0 auto;
+		}
+		.nav6{
+			float: left;
+		}
+		.nav6 li{
+			float: left;
+			margin: left:;
+			
+		}
+		.navli{
+			margin-left: 15px;
+		}
+		.nav6 img{
+			height: 320px;
+			width: 228px;
+		}
+		.nav6 #m3{
+			border-right:none ;
+		}
+		.nav6>li{
+			position: relative;
+		}
+		.hide{
+			position: absolute;
+			width: 228px;
+			height: 122px;
+			background-color:rgba(0,0,0,0.5);
+			bottom: 0;
+			color: white;
+			font-size:12px;
+			font-family:Microsoft YaHei;
+			line-height:20px;
+		}
+		.nav6 .img11{
+			width: 471px;
+		}
+		.hide1{
+			width: 108px;
+			height: 18px;
+			margin-left:29px;
+			margin-top: 21px;
+			margin-bottom: 12px;
+		}
+		.hide2{
+			width: 175px;
+			height: 53px;
+			margin-left:29px;
+			color:rgba(255,255,255,1);
+		}
+		.lao{
+			font-size:18px;
+			font-family:Microsoft YaHei;
+			font-weight:bold;
+		}
+
+		.end{
+			width: 100%;
+			height: 450px;
+			margin-top: 80px;
+
+		}
+		.boxone{
+			float: left;
+			margin-left: 180px;
+			margin-top: 124px;
+		}
+		.xueli{
+			font-size:36px;
+			font-family:Microsoft YaHei;
+			font-weight:bold;
+			color:rgba(0,163,255,1);
+			padding-bottom: 35px;
+		}
+		.xiaozi{
+			font-size:12px;
+			font-family:SimSun;
+			font-weight:400;
+			color:rgba(101,101,101,1);
+			padding-bottom: 33px;
+		}
+		.xiazai{
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			font-weight:400;
+			border:1px solid rgba(0,163,255,1) ;
+			width: 120px;
+			height: 40px;
+		}
+		.xiazai a{
+			color:rgba(0,163,255,1);
+		}
+		.xiazai li{
+			padding-top: 11px;
+			padding-left: 27px;
+		}
+		.boxtwo{
+			float: left;
+		}
+		.navtwo{
+			margin-left: 273px;
+			margin-top: 129px;
+		}
+
+		.navthree{
+			margin-top:130px ;
+			margin-left: 177px;
+		}
+		.navtwo a  {
+			font-size:12px;
+			font-family:SimSun;
+			font-weight:400;
+			color:rgba(51,51,51,1);
+			line-height:21px;
+		}
+		.boxthree{
+			float: left;
+		}
+		.navthree a  {
+			font-size:12px;
+			font-family:SimSun;
+			font-weight:400;
+			color:rgba(51,51,51,1);
+			line-height:21px;
+		}
+		.guan{
+			padding-bottom: 15px;
+
+		}
+		.xin{
+			padding-bottom: 14px;
+		}
+		.guan a{
+			font-size:16px;
+			font-family:Microsoft YaHei;
+			color:#333333FF;
+		}
+		.mid2{
+			height: 100px;
+		}
+		.box5>li>img{
+			height: 140px;
+		}
+		#float {
+			position: absolute;
+			z-index: 1;
+		}	
+		#floatImg {
+			width: 300px;
+			height: 160px;
+		}
+		#clos{
+			position: absolute;
+			margin-left: 270px;
+			width: 30px;
+			height: 30px;
+		}
+		#hot{
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+
+</head>
+<body >
+	<div id="hot">
+	<div class="banner" id="banner">
+		<div id="img1">
+			<img src="0.png" class="img">
+		</div>
+		<div id="block">
+			<div id="words" style="margin-left:800px">
+			四川的酒，四川的菜，四川的小伙长得帅！！四川的人，四川的瓜，四川的美女人人夸！！
+			</div>
+		</div>
+	</div>
+
+	<div class="box" id="box">
+		<div class="slider" id="slider">
+			<div class="slide"><img src="1.png" alt=""></div>
+			<div class="slide"><img src="2.png" alt=""></div>
+			<div class="slide"><img src="3.png" alt=""></div>
+			<div class="slide"><img src="4.png" alt=""></div>
+			<div class="slide"><img src="5.png" alt=""></div>
+			<div class="slide"><img src="1.png" alt=""></div>
+			<div class="slide"><img src="2.png" alt=""></div>
+		</div>
+		<span id="left"><</span>
+		<span id="right">></span>
+		<ul class="nav" id="nav">
+			<li class="active">1</li>
+			<li>2</li>
+			<li>3</li>
+			<li>4</li>
+			<li>5</li>
+		</ul>
+	</div>	
+
+	<div class="last">
+		<div class="mid1">
+			<div class="boxx clear">
+				<ul class="nav3">
+					<li class="jingpin"><a href="">特色四川</a></li>
+					<li class="ja "><a href="https://baike.baidu.com/item/%E5%B7%9D%E5%89%A7%E5%8F%98%E8%84%B8/63484?fr=aladdin">川剧变脸</a></li>
+					
+					<li class="ja"><a href="https://baike.baidu.com/item/%E5%A4%A7%E7%86%8A%E7%8C%AB/34935?fromtitle=%E7%86%8A%E7%8C%AB&fromid=162918&fr=aladdin">可爱熊猫</a></li>
+					<li class="ja"><a href="https://baike.baidu.com/item/%E7%81%AB%E9%94%85/274015?fr=aladdin">麻辣火锅</a></li>
+					<li class="ja"><a href="https://baike.baidu.com/item/%E8%9C%80%E7%BB%A3/218?fr=aladdin">独特蜀绣</a></li>
+					<li class="ja"><a href="https://baike.baidu.com/item/%E5%9B%9B%E5%B7%9D/212569?fr=aladdin">秀雅风景</a></li>
+				</ul>
+				<ul class=" nav4 clear">
+					<li class="xiugai"><a href="https://space.bilibili.com/401340719?spm_id_from=333.788.b_765f7570696e666f.1">了解更多</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="mid2">
+			<div class="kong clear">
+				<div class="one clear">
+					<ul class="oneul"><li>火锅专区</li></ul>
+					<ul class="twoul"><li><a href="https://space.bilibili.com/401340719?spm_id_from=333.788.b_765f7570696e666f.1">查看更多</a></li></ul>
+				</div>
+
+			</div>
+		</div>
+		<div class="mid3 clear">
+			<ul class="box2">
+				<li >
+					<img src="9.png" alt="PHP"/ >
+					<div class="xia">
+						<div class="xia1">
+							味蜀吾
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li >
+					<img src="8.png" alt="And" />
+					<div class="xia">
+						<div class="xia1">
+							临江门洞子老火锅
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li >
+					<img src="9.png" alt="Ang" />
+					<div class="xia">
+						<div class="xia1">
+							大宅门
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li >
+					<img src="7.png" alt="H5" />
+					<div class="xia">
+						<div class="xia1">
+							蜀九香
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li id="H5">
+					<img src="8.png" alt="H5" />
+					<div class="xia">
+						<div class="xia1">
+							麻辣空间
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li >
+					<img src="8.png" alt="PHP"/>
+					<div class="xia">
+						<div class="xia1">
+							老船坊
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li >
+					<img src="9.png" alt="And" />
+					<div class="xia">
+						<div class="xia1">
+							皇城老妈
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li >
+					<img src="7.png" alt="Ang" />
+					<div class="xia">
+						<div class="xia1">
+							蓉城老妈
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li >
+					<img src="7.png" alt="H5" />
+					<div class="xia">
+						<div class="xia1">
+							大龙燚
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+				<li id="H5">
+					<img src="8.png" alt="H5" />
+					<div class="xia">
+						<div class="xia1">
+							小龙坎
+						</div>
+						<div class="xia2">
+							<span id="gaoji">good&nbsp;&nbsp;</span><span id="xuexi">·&nbsp;&nbsp;11111人 like</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="mid4">
+			<div class="kong2 clear">
+				<ul class="box3">
+					<li class="qi">著名景点</li>
+					<li class="cha"><a href="https://space.bilibili.com/401340719?spm_id_from=333.788.b_765f7570696e666f.1">查看全部</a></li>
+				</ul>
+				<div class="xiaonav ">
+					<ul class="box4 clear">
+						<li class="small"><a href="https://sichuan.cncn.com/jingdian/">热门</a></li>
+						<li class="small"><a href="https://sichuan.cncn.com/jingdian/">初级</a></li>
+						<li class="small"><a href="https://sichuan.cncn.com/jingdian/">中级</a></li>
+						<li class="small"><a href="https://sichuan.cncn.com/jingdian/">高级</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<div class="mid5 clear">
+			<ul class="box5 clear">
+				<li>
+					<img src="qing.png" alt="Mic"/>
+					<div class="xia">
+						<div class="xia3">
+							青城山
+						</div>
+						<div class="xia2">
+							<span id="gaoji">都江堰青城山风景区</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="kuan.png" alt="Py"/>
+					<div class="xia">
+						<div class="xia3">
+							宽窄巷子
+						</div>
+						<div class="xia2">
+							<span id="gaoji">成都青羊区金河路口</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="chun.png" alt="cocos"/>
+					<div class="xia">
+						<div class="xia3">
+							春熙路
+						</div>
+						<div class="xia2">
+							<span id="gaoji">成都锦江区春熙路街道</span>
+						</div>
+					</div>
+				</li>
+				<li>
+					<img src="tai.png" alt="Kami"/>
+					<div class="xia">
+						<div class="xia3">
+							太古里
+						</div>
+						<div class="xia2">
+							<span id="gaoji">成都中心地带</span>
+						</div>
+					</div>
+				</li>
+				<li id="UGUI">
+					<img src="e.png" alt="UGUI"/>
+					<div class="xia">
+						<div class="xia3">
+							峨眉山
+						</div>
+						<div class="xia2">
+							<span id="gaoji">四川省西南部</span>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		
+		<div class="end">
+			<div class="endbox clear">
+				<div class="boxone">
+					<ul class="navone">
+						<li class="xueli">印象四川</li>
+						<li class="xiaozi"> 从巴蜀古国到今日之四川,数千年悠悠岁月,如滔滔川江,既孕育了千古英才,亦淘尽了百代风流,润育了这如画的山川,如诗的史迹。</li>
+						<div class="xiazai"><li>留言解疑</li></div>
+					</ul>
+				</div>
+				<div class="boxtwo">
+					<ul class="navtwo">
+						<li class="guan"><a href="">关于</a></li>
+						<li><a href="">关于</a></li>
+						<li><a href="">团队</a></li>
+						<li><a href="">工作机会</a></li>
+						<li><a href="">服务</a></li>
+						<li><a href="">帮助</a></li>
+					</ul>
+				</div>
+				<div class="boxthree">
+					<ul class="navthree">
+						<li class="guan xin"><a href="">新手指南</a></li>
+						<li><a href="">四川地图</a></li>
+						<li><a href="">四川导航</a></li>
+						<li><a href="">四川气候</a></li>
+						<li><a href="">四川地形</a></li>
+						<li><a href="">四川攻略</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+	</div>
+
+	<div id="float">
+		<button id="clos">X</button>
+		<a href="http://www.517ee.com/" target="_blank">
+			<img id="floatImg" alt="图片无法加载" src="四川青旅.png">
+		</a>
+	</div>
+	
+	<script >
+    	function Obj(){};
+	    Obj.prototype.draw=function(o){//prototype 属性使我有能力向对象添加属性和方法。
+	        var speed=0;
+	        var startPosLeft=Math.ceil(Math.random()*document.documentElement.clientWidth);
+	        o.style.opacity=(Math.ceil(Math.random()*3)+7)/10; 
+	        o.style.left=startPosLeft+'px'; 
+	        o.style.color="#fff";
+	        o.style.fontSize=12+Math.ceil(Math.random()*14)+'px';
+	        setInterval(function(){
+	            if(speed<document.documentElement.clientHeight){
+	                o.style.top=speed+'px';
+	                o.style.left=startPosLeft+Math.ceil(Math.random()*8)+'px';
+	                speed+=20;
+	            }
+	            else{
+	                o.style.display='none';
+	            }
+	        },400);
+	    }
+	 
+	    var flame=document.getElementById('hot');
+	  
+	    setInterval(function(){
+	        var odiv=document.createElement('div');  
+	        odiv.innerHTML="<img src=\"hot.png\" width='28px' height='28px'>";//双引号中bai不能再有双引号（可du用单引号），如果一zhi定要用必须对其进行专换
+	        odiv.style.position='absolute';
+	        flame.appendChild(odiv);
+	        var obj=new Obj();
+	        obj.draw(odiv);
+	    },4000);  
+	</script>
+
+
+	<script >
+		var imgF=document.getElementById("float");
+		var floatM=document.getElementById("floarImg");
+		var moveX = 0; //X轴方向上移动的距离
+		var moveY = 0; //Y轴方向上移动的距离
+		var stepX = 5; //图片X轴移动的速度
+		var stepY = 6; //图片Y轴移动的速度
+		var directionX = 0; //设置图片在X轴方向上的移动方向   0:向右  1:向左
+		var directionY = 0; //设置图片在Y轴方向上的移动方向   0:向下  1:向上
+		var timer2;
+ 		imgF.onmouseover=clearPos1;
+ 		imgF.onmouseout=changePos;
+
+ 		var clo=document.getElementById("clos");
+ 		clo.onclick=function(){
+ 			imgF.style.display="none";
+ 		}
+		function changePos() {
+			timer2 = setInterval(function() {
+				var img = document.getElementById("float");
+				//浏览器的高度
+				var height = document.documentElement.clientHeight;
+				 //浏览器的宽度
+				var width = document.documentElement.clientWidth;
+				//飘浮图片的高度
+				var imgHeight = document.getElementById("floatImg").height; 
+				 //瓢浮图片的宽度
+				var imgWidth = document.getElementById("floatImg").width;
+				//设置飘浮图片距离浏览器左侧位置
+				img.style.left = parseInt(moveX + document.documentElement.scrollLeft) + "px";
+				//设置飘浮图片距离浏览器右侧位置
+				img.style.top = parseInt(moveY + document.documentElement.scrollTop) + "px";
+				//设置图片在Y轴上的移动规律
+				if(directionY == 0) {
+					//飘浮图片在Y轴方向上向下移动
+					moveY += stepY;
+				} else {
+					//飘浮图片在Y轴方向上向上移动
+					moveY -= stepY;
+				}
+				if(moveY < 0) {
+					//如果飘浮图片飘浮到顶端的时候，设置图片在Y轴方向上向下移动
+					directionY = 0;
+					moveY = 0;
+				}
+				if(moveY > (height - imgHeight)) {
+					//如果飘浮图片飘浮到浏览器底端的时候，设置图片在Y轴方向上向上移动
+					directionY = 1;
+					moveY = (height - imgHeight);
+				}
+	 
+				//设置图片在X轴上的移动规律
+				if(directionX == 0) {
+					moveX += stepX;
+				} else {
+					moveX -= stepX;
+				}
+				if(moveX < 0) {
+					//如果飘浮图片飘浮到浏览器左侧的时候，设置图片在X轴方向上向右移动
+					directionX = 0;
+					moveX = 0;
+				}
+				if(moveX > (width - imgWidth)) {
+					//如果飘浮图片飘浮到浏览器右侧的时候，设置图片在X轴方向上向左移动
+					directionX = 1;
+					moveX = (width - imgWidth);
+				}
+			}, 50)
+			
+		}
+		changePos();
+		
+		function clearPos1() {
+			clearInterval(timer2);
+		}
+	</script>
+
+	<script >
+		var list=document.getElementsByClassName("small");
+		for(var i=0;i<list.length;i++){
+			list[i].onmouseover=function(){
+				this.style.textAlign="center";
+				this.style.borderRadius="30px";
+				this.style.backgroundColor="#00A3FFFF";
+			}
+			list[i].onmouseleave=function(){
+				this.style="none";
+			}
+
+		}
+
+	</script>
+
+	<script >
+		var xia=document.getElementsByClassName("xiazai")[0];
+		var end=document.getElementsByClassName("end")[0];
+		xia.onclick=function(){
+			var div=document.createElement("div");
+			end.appendChild(div);
+			div.style.width=400+'px';
+			div.style.height=300+'px';
+			div.style.background="white";
+			end.style.position="relative";
+			div.style.position="absolute";
+			div.style.marginLeft="500px";
+			div.style.marginTop="100px";
+			div.style.border="5px"+" "+"solid"+" "+"rgba(0,163,255,1)";
+
+			var div1=document.createElement("div");
+			div.appendChild(div1);
+			div1.innerHTML="请在3分钟内，输入您想咨询的内容，我们将以邮箱的形式回答您的问，工作时间为0-1小时，请耐心等候~🙂(可直接点击提交结束此页面🙂)"
+			div1.style.marginTop="15px";
+			div1.style.fontSize="15px";
+			div1.style.color="#aaa";
+
+			var div2=document.createElement("div");
+			div.appendChild(div2);
+			div2.style.marginTop="10px";
+			div2.style.marginLeft="250px";
+			div2.innerHTML="倒计时:"+180+'s';
+			var time=180;
+			var idtime=setInterval(function(){
+				if(idtime>=0){
+					div2.innerHTML="倒计时:"+time+'s';
+					time--;
+				}else{
+					clearInterval(idtime);
+				}
+			},1000)
+
+			var inp=document.createElement("input");
+			div.appendChild(inp);
+			inp.style.marginLeft="60px";
+			inp.style.width="300px"
+			inp.style.height="100px";
+			inp.focus();
+
+			var p=document.createElement("p");
+			div.appendChild(p);
+			p.innerHTML="请输入您的邮箱号:";
+			p.style.fontSize="15px";
+			p.style.color="#aaa";
+			p.style.marginLeft="60px";
+			p.style.marginTop="20px";
+
+			var inp2=document.createElement("input");
+			div.appendChild(inp2);
+			inp2.style.marginLeft="60px";
+			inp2.style.marginTop="10px";
+
+			var btn=document.createElement("button");
+			div.appendChild(btn);
+			btn.innerHTML="提交";
+
+			btn.onclick=function(){
+				div1.style.display=div2.style.display=inp.style.display=inp2.style.display=btn.style.display=p.style.display="none";
+				var but=document.createElement("button");
+				div.appendChild(but);
+				but.innerHTML="X";
+				but.style.marginTop="60px";
+				but.style.marginLeft="270px";
+				but.style.width="30px";
+				var pp=document.createElement("p");
+				div.appendChild(pp);
+
+				pp.innerHTML="提交成功！！"+"<br/>"+"咨询电话：8888888";
+				pp.style.marginLeft="100px";
+				pp.style.marginTop="10px";
+				pp.style.fontSize="20px";
+
+				but.onclick=function(){
+					div.style.display="none";
+				}
+
+			}
+
+		}
+
+	</script>
+
+	<script  >
+		var box=document.getElementById("box");
+		var slider=document.getElementById("slider");
+		var left=document.getElementById("left");
+		var right=document.getElementById("right");
+		var oNavList=document.getElementById("nav").children;
+		var words=document.getElementById("words");
+		var block=document.getElementById("block");
+		var interval;
+		var i=0;
+		var timer;
+
+		setInterval(function(){
+				if(parseInt(words.style.marginLeft)<=-400){
+					words.style.marginLeft="820px";
+				} 
+				words.style.marginLeft=(parseInt(words.style.marginLeft)-1)+"px";
+			
+				
+		},20);
+		
+		var index=1;
+		var isMoving=false;
+		timer=setInterval(next,3000);
+		box.onmouseover=function(){
+			animate(left,{opacity:50});
+			animate(right,{opacity:50});
+			clearInterval(timer);
+		}
+
+		box.onmouseout=function(){
+			animate(left,{opacity:0});
+			animate(right,{opacity:0});
+			timer=setInterval(next,3000);
+		}
+
+		right.onclick=next;
+		left.onclick=prev;
+
+		function next(){
+			if(isMoving){
+				return;
+			}
+			isMoving=true;
+			index++;
+			navChange();
+			animate(slider,{left:-1200*index},function(){
+				if(index>=6){
+					slider.style.left="-1200px";
+					index=1;
+				}
+				isMoving=false;
+			});
+		}
+		function prev(){
+			if(isMoving){
+				return;
+			}
+			isMoving=true;
+			index--;
+			navChange();
+			animate(slider,{left:-1200*index},function(){
+				if(index<=0){
+					slider.style.left="-6000px";
+					index=5;
+				}
+				isMoving=false;
+			});
+		}
+		for( var i=0;i<oNavList.length;i++){
+			oNavList[i].idx=i;
+			oNavList[i].onclick=function(){
+				index=this.idx+1;
+				navChange();
+				animate(slider,{left:-1200*index});
+			}
+		}
+
+		function navChange(){
+			for(var i=0;i<oNavList.length;i++){
+				oNavList[i].className="";
+			}
+			if(index>5){
+				oNavList[0].className="active";
+			}else if(index===0){
+				oNavList[4].className="active";
+			}else{
+				oNavList[index-1].className="active";
+			}
+		}
+
+
+
+		function getStyle(obj, attr){
+			if(obj.currentStyle){
+				return obj.currentStyle[attr];
+			} else {
+				return getComputedStyle(obj, null)[attr];
+			}
+		}
+		function animate(obj,json,callback){
+			clearInterval(obj.timer);
+			obj.timer = setInterval(function(){
+				var isStop = true;
+				for(var attr in json){
+					var now = 0;
+					if(attr == 'opacity'){
+						now = parseInt(getStyle(obj,attr)*100);
+					}else{
+						now = parseInt(getStyle(obj,attr));
+					}
+					var speed = (json[attr] - now) / 8;
+					speed = speed>0?Math.ceil(speed):Math.floor(speed);
+					var cur = now + speed;
+					if(attr == 'opacity'){
+						obj.style[attr] = cur / 100;
+					}else{
+						obj.style[attr] = cur + 'px';
+					}
+					if(json[attr] !== cur){
+						isStop = false;
+					}
+				}
+				if(isStop){
+					clearInterval(obj.timer);
+					callback&&callback();
+				}
+			}, 30)
+		}
+
+
+	</script>
+
+</body>
+</html>
